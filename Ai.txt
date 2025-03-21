@@ -1,0 +1,21 @@
+
+Reçoit
+
+-> PC du joueur
+-> Son nombre de PC
+
+-> Vie restant du joueur
+-> Sa Vie
+
+-> Son taux d'aggrésivité
+
+-> c'est dégat
+-> nb dégat joueur
+
+Sortie
+
+un action 
+
+-> attack faible, moyenne, puissant
+-> manger
+-> fuire

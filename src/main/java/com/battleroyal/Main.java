@@ -3,6 +3,7 @@ package com.battleroyal;
 public class Main {
    
     public static void main(String[] args) {
-       new Game().startGame();
+       Game game = new Game();
+       game.startGame();
     }
 }

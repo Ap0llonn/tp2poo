@@ -1,40 +1,45 @@
 package com.battleroyal;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.battleroyal.modals.Day;
-import com.battleroyal.modals.player.BotPlayer;
 import com.battleroyal.modals.player.PlayerFactory;
 import com.battleroyal.modals.player.PlayerManager;
 import com.battleroyal.modals.player.User;
+import com.battleroyal.utils.Console;
 
 public class Game {
 
     private PlayerManager playerManager;
-
-    private List<BotPlayer> botPlayers;
+    private PlayerFactory playerFactory;
+    private User user;
 
     public Game() {
-        playerManager = new PlayerManager();
-        botPlayers = new ArrayList<>();
-        botPlayers = playerManager.initList();
-
+        playerFactory = new PlayerFactory();
+        playerManager = PlayerManager.getInstance();
     }
 
     public void startGame() {
 
-        // Console.loadingScreen();
-        // Console.displayMenu();
-        // System.out.println(Console.getInputInt(2));
-        // Console.clearConsole();
-        // Console.spinner();
-        // Console.startGameLoading();
+        //Console.loadingScreen();
+        //Console.displayMenu();
+        //if(Console.getInputInt(1) == 1) return; 
+        //Console.spinner();
+        //Console.startGameLoading();
 
-        Day day = new Day();
-        PlayerFactory playerFactory = new PlayerFactory();
-        User user = playerFactory.createUser();
-        day.combat(user, botPlayers.get(0));
+        user = playerFactory.createUser();
+        
+        runDay(1, 75);
+        if (user.isDead())
+            return;
+        runDay(2, 75);
+        if (user.isDead())
+            return;
+        runDay(3, 30);
+        if (user.isDead())
+            return;
+    }
 
+    private void runDay(int dayNumber, int deathPercentage) {
+        System.out.println("JOUR " + dayNumber);
+        Day day = new Day(deathPercentage, dayNumber, user);
     }
 }

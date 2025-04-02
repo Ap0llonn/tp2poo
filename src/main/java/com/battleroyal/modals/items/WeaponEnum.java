@@ -1,22 +1,28 @@
 package com.battleroyal.modals.items;
 
 public enum WeaponEnum {
-    
-    ÉPÉE_COURTE(10, 80, 5, 2),
-    ÉPÉE_LONGUE(15, 70, 7, 1),
-    DAGUE(8, 90, 3, 5),
-    HACHE_DE_BATAILLE(20, 60, 10, 0),
-    MARTEAU_DE_GUERRE(25, 50, 15, -2),
-    LANCE(12, 75, 8, 3),
-    ARC(9, 85, 2, 4),
-    ARBALETE(14, 78, 4, 2),
-    FLÉAU(18, 55, 12, -1),
-    KATANA(17, 88, 6, 3),
-    CIMITARRE(13, 80, 5, 4),
-    GRIFFES(11, 85, 3, 6),
-    ÉPÉE_LONGUE_DEUX_MAINS(22, 65, 12, -3),
-    BÂTON_MAGIQUE(10, 90, 4, 7),
-    HALLEBARDE(16, 70, 9, 2);
+
+    ÉPÉE_COURTE(28, 42, 5, 4),
+    ÉPÉE_LONGUE(38, 37, 7, 2),
+    DAGUE(22, 46, 3, 9),
+    HACHE_DE_BATAILLE(40, 30, 10, 2),
+    MARTEAU_DE_GUERRE(38, 28, 15, -3),
+    LANCE(36, 37, 8, 5),
+    ARC(30, 45, 3, 7),
+    ARBALETE(40, 39, 5, 6),
+    FLÉAU(33, 35, 12, -4),
+    KATANA(41, 44, 6, 4),
+    CIMITARRE(37, 40, 5, 6),
+    GRIFFES(32, 44, 4, 10),
+    ÉPÉE_LONGUE_DEUX_MAINS(45, 30, 12, -5),
+    BÂTON_MAGIQUE(28, 48, 4, 12),
+    HALLEBARDE(40, 35, 9, 6),
+    GUILLOTINE(42, 29, 11, -6),
+    SCEPTRE(35, 41, 6, 8),
+    HACHE_DE_GUERRE(39, 33, 13, -2),
+    LASER_CUTTER(60, 50, 10, 3),
+    RAYON_PLASMA(65, 48, 8, 4), 
+    DISSIPATEUR_QUANTIQUE(70, 45, 12, 5);
 
     private final int damage;
     private final int precision;
@@ -46,4 +52,3 @@ public enum WeaponEnum {
         return luck;
     }
 }
-

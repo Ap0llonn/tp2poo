@@ -14,7 +14,6 @@ public class PlayerFactory {
     private final List<String> lastNames;
 
     public PlayerFactory() {
-
         this.firstNames = BotLoader.getStringFromFile(FIRST_NAME_FILE);
         this.lastNames = BotLoader.getStringFromFile(LAST_NAME_FILE);
     }
@@ -23,32 +22,26 @@ public class PlayerFactory {
         return new BotPlayer(
             generateRandomName(), 
             100,
-            100,
-            Console.randomNumber(1, 12), 
-            Console.randomNumber(1, 5), 
-            Console.randomNumber(20, 80), 
-            Console.randomNumber(1, 40),
-            Console.randomNumber(20, 100),
-            100,
+            Console.randomNumber(1, 12),  // defense
+            Console.randomNumber(1, 5), // damage
+            Console.randomNumber(20, 80), // precision
+            Console.randomNumber(1, 40), // luck
+            Console.randomNumber(20, 100), // aggressivity
             100
         );
     }
 
     public User createUser() {
         return new User(
-            generateRandomName(), 
+            Console.getPlayerName(),
             100, 
-            100,
-            Console.randomNumber(1, 12), 
-            Console.randomNumber(1, 5), 
-            Console.randomNumber(20, 80), 
-            Console.randomNumber(1, 40),
-            100,
+            Console.randomNumber(1, 12),// defense 
+            Console.randomNumber(1, 5), // damage
+            Console.randomNumber(20, 80), // precision
+            Console.randomNumber(1, 40), // luck
             100
         );
     }
-
-    
 
     private String generateRandomName() {
         return getRandomElement(firstNames) + " " + getRandomElement(lastNames);
